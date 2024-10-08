@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.main1Btn {
+.main2Btn {
     width: 60%;
     margin-top: 2rem;
     padding: 1rem 0;
@@ -18,7 +18,7 @@
     border-radius: 10px;
 }
   
-.main1Btn:hover {
+.main2Btn:hover {
     cursor: pointer;
     background-color: aliceblue;
 }

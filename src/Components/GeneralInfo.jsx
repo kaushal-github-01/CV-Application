@@ -5,7 +5,7 @@ function GeneralInfo() {
   return (
     <>
       <button
-        className="main1Btn"
+        className="main2Btn"
         onClick={() => {
           const item = document.getElementById("generalInfoForm");
           manageDisplay(item);

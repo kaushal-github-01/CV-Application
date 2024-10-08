@@ -1,0 +1,17 @@
+#addEduExpBtn{
+    display: none;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+}
+
+#addEduExpBtn:hover{
+    cursor: pointer;
+}
+
+#educationalExpForm{
+    display: none;
+}
+
+#educationalExpForm div{
+    margin-top: 2rem;
+}
