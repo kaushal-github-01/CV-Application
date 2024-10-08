@@ -1,17 +1,17 @@
-#addEduExpBtn{
+#addSkillBtn{
     display: none;
     padding: 0.5rem 1rem;
 }
 
-#addEduExpBtn:hover{
+#addSkillBtn:hover{
     cursor: pointer;
 }
 
-#educationalExpForm{
+#allSkillList{
     display: none;
     margin-top: 2rem;
 }
 
-#educationalExpForm div{
+#allSkillList div{
     margin-bottom: 1rem;
 }

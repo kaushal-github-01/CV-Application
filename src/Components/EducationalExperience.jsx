@@ -6,7 +6,7 @@ function EducationalExperience() {
   return (
     <>
       <button
-        className="main2Btn"
+        className="main3Btn"
         onClick={() => {
           const item1 = document.getElementById("addEduExpBtn");
           const item2 = document.getElementById("educationalExpForm");

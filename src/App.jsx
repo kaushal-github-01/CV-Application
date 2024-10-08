@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import GeneralInfo from "./Components/GeneralInfo";
 import EducationalExperience from "./Components/EducationalExperience";
+import Skills from "./Components/Skills";
 
 function manageDisplay(item) {
   const computedStyle = window.getComputedStyle(item);
@@ -28,6 +29,7 @@ function App() {
       <div className="container">
         <GeneralInfo />
         <EducationalExperience />
+        <Skills />
       </div>
     </>
   );

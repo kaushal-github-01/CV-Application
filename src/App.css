@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.main2Btn {
+.main3Btn {
     width: 60%;
     margin-top: 2rem;
     padding: 1rem 0;
@@ -18,7 +18,7 @@
     border-radius: 10px;
 }
   
-.main2Btn:hover {
+.main3Btn:hover {
     cursor: pointer;
     background-color: aliceblue;
 }
