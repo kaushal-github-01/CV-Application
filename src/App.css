@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main1Btn {
+    width: 60%;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    font-size: larger;
+    border-radius: 10px;
+}
+  
+.main1Btn:hover {
+    cursor: pointer;
+    background-color: aliceblue;
+}
