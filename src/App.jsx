@@ -4,6 +4,7 @@ import GeneralInfo from "./Components/GeneralInfo";
 import EducationalExperience from "./Components/EducationalExperience";
 import Skills from "./Components/Skills";
 import Profile from "./Components/Profile";
+import WorkExperience from "./Components/WorkExperience";
 
 function manageDisplay(item) {
   const computedStyle = window.getComputedStyle(item);
@@ -36,6 +37,7 @@ function App() {
           </div>
           <div className="RightSideContainer">
             <Profile />
+            <WorkExperience />
           </div>
         </div>
       </div>

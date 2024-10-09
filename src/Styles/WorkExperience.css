@@ -1,0 +1,17 @@
+#addWorkExpBtn{
+    display: none;
+    padding: 0.5rem 1rem;
+}
+
+#addWorkExpBtn:hover{
+    cursor: pointer;
+}
+
+#workExpForm{
+    display: none;
+    margin-top: 2rem;
+}
+
+#workExpForm div{
+    margin-bottom: 1rem;
+}
