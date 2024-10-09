@@ -1,0 +1,10 @@
+#profileForm{
+    display: none;
+    width: 90%;
+}
+
+#profileForm label input{
+    height: 20rem;
+    width: 100%;
+    margin-top: 2rem;
+}

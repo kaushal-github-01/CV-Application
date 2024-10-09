@@ -3,6 +3,7 @@ import "./App.css";
 import GeneralInfo from "./Components/GeneralInfo";
 import EducationalExperience from "./Components/EducationalExperience";
 import Skills from "./Components/Skills";
+import Profile from "./Components/Profile";
 
 function manageDisplay(item) {
   const computedStyle = window.getComputedStyle(item);
@@ -17,7 +18,7 @@ function LabelInput(props) {
   return (
     <>
       <label>
-        {props.text}: <input /> <br /> <br />
+        {props.text} <input /> <br /> <br />
       </label>
     </>
   );
@@ -28,8 +29,15 @@ function App() {
     <>
       <div className="container">
         <GeneralInfo />
-        <EducationalExperience />
-        <Skills />
+        <div className="LRSides">
+          <div className="LeftSideContainer">
+            <EducationalExperience />
+            <Skills />
+          </div>
+          <div className="RightSideContainer">
+            <Profile />
+          </div>
+        </div>
       </div>
     </>
   );

@@ -10,15 +10,36 @@
     align-items: center;
 }
 
-.main3Btn {
+.LRSides {
+    display: flex;
     width: 60%;
+}
+
+.LeftSideContainer {width: 50%;}
+
+.RightSideContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.mainBtn{
     margin-top: 2rem;
     padding: 1rem 0;
     font-size: larger;
     border-radius: 10px;
 }
+
+.mainUpperBtn{ 
+    width: 60%;
+}
+
+.mainCentral4Btn {
+    width: 90%;
+}
   
-.main3Btn:hover {
+.mainBtn:hover {
     cursor: pointer;
     background-color: aliceblue;
 }

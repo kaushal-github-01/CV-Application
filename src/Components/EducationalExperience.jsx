@@ -6,7 +6,7 @@ function EducationalExperience() {
   return (
     <>
       <button
-        className="main3Btn"
+        className="mainCentral4Btn mainBtn"
         onClick={() => {
           const item1 = document.getElementById("addEduExpBtn");
           const item2 = document.getElementById("educationalExpForm");
@@ -27,9 +27,9 @@ function EducationalExperience() {
           const root = createRoot(div);
           root.render(
             <>
-              <LabelInput text="Degree Name" />
-              <LabelInput text="Institute Name" />
-              <LabelInput text="Duration" />
+              <LabelInput text="Degree Name:" />
+              <LabelInput text="Institute Name:" />
+              <LabelInput text="Duration:" />
             </>
           );
           form.appendChild(div);

@@ -6,7 +6,7 @@ function Skills() {
   return (
     <>
       <button
-        className="main3Btn"
+        className="mainCentral4Btn mainBtn"
         onClick={() => {
           const item1 = document.getElementById("addSkillBtn");
           const item2 = document.getElementById("allSkillList");
@@ -27,7 +27,7 @@ function Skills() {
           const root = createRoot(div);
           root.render(
             <>
-              <LabelInput text="Enter Skill" />
+              <LabelInput text="Enter Skill:" />
             </>
           );
           form.appendChild(div);
