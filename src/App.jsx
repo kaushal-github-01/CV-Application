@@ -1,4 +1,5 @@
 import "./App.css";
+import "../src/styles/GeneralInformation.css";
 import { useState } from "react";
 import GeneralInformation from "./components/GeneralInformation";
 
@@ -44,11 +45,16 @@ function App() {
         </section>
 
         <section id="ViewSection">
-          <h1>{GeneralInformationData.name}</h1>
-          <p>{GeneralInformationData.title}</p>
-          <p>{GeneralInformationData.number}</p>
-          <p>{GeneralInformationData.email}</p>
-          <p>{GeneralInformationData.address}</p>
+          <div id="CVTop">
+            <h1 id="CVName">{GeneralInformationData.name}</h1>
+            <p id="CVTitle">{GeneralInformationData.title}</p>
+          </div>
+          <div id="CVContacts">
+            <h2>Contacts</h2>
+            <p>{GeneralInformationData.number}</p>
+            <p>{GeneralInformationData.email}</p>
+            <p>{GeneralInformationData.address}</p>
+          </div>
         </section>
       </div>
     </>
