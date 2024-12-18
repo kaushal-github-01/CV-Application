@@ -1,5 +1,25 @@
 import "./App.css";
 import { useState } from "react";
+import GeneralInformation from "./components/GeneralInformation";
+
+function HandleBtnClick(item) {
+  if (item.style.display === "block") {
+    item.style.display = "none";
+  } else {
+    item.style.display = "block";
+  }
+}
+
+function handleInputChange(data) {
+  const event = data[0];
+  const GeneralInformationData = data[1];
+  const setGeneralInformationData = data[2];
+
+  setGeneralInformationData({
+    ...GeneralInformationData,
+    [event.target.name]: event.target.value,
+  });
+}
 
 function App() {
   const [GeneralInformationData, setGeneralInformationData] = useState({
@@ -10,86 +30,19 @@ function App() {
     address: "unknown",
   });
 
-  function handleBtnClick() {
-    const GeneralInformationForm = document.getElementById(
-      "GeneralInformationForm"
-    );
-
-    if (GeneralInformationForm.style.display === "block") {
-      GeneralInformationForm.style.display = "none";
-    } else {
-      GeneralInformationForm.style.display = "block";
-    }
-  }
-
-  function handleInputChange(event) {
-    const targetName = event.target.name;
-
-    setGeneralInformationData({
-      ...GeneralInformationData,
-      [targetName]: event.target.value,
-    });
-  }
-
   return (
     <>
       <div id="component">
         <section id="EditSection">
-          <button className="mainBtn" onClick={handleBtnClick}>
-            General Information
-          </button>
-          <form id="GeneralInformationForm">
-            <label>
-              Name:{" "}
-              <input
-                type="text"
-                name="name" // Added name attribute
-                value={GeneralInformationData.name}
-                onChange={handleInputChange}
-              />
-            </label>{" "}
-            <br /> <br />
-            <label>
-              Title:{" "}
-              <input
-                type="text"
-                name="title"
-                value={GeneralInformationData.title}
-                onChange={handleInputChange}
-              />
-            </label>
-            <br /> <br />
-            <label>
-              Number:{" "}
-              <input
-                type="text"
-                name="number"
-                value={GeneralInformationData.number}
-                onChange={handleInputChange}
-              />
-            </label>
-            <br /> <br />
-            <label>
-              Email:{" "}
-              <input
-                type="text"
-                name="email"
-                value={GeneralInformationData.email}
-                onChange={handleInputChange}
-              />
-            </label>
-            <br /> <br />
-            <label>
-              Address:{" "}
-              <input
-                type="text"
-                name="address"
-                value={GeneralInformationData.address}
-                onChange={handleInputChange}
-              />
-            </label>
-          </form>
+          <GeneralInformation
+            data={[
+              GeneralInformationData,
+              setGeneralInformationData,
+              handleInputChange,
+            ]}
+          />
         </section>
+
         <section id="ViewSection">
           <h1>{GeneralInformationData.name}</h1>
           <p>{GeneralInformationData.title}</p>
@@ -103,3 +56,4 @@ function App() {
 }
 
 export default App;
+export { HandleBtnClick };
