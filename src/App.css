@@ -1,0 +1,41 @@
+#component {
+    display: flex;
+}
+
+#EditSection{
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: aliceblue;
+}
+
+.mainBtn{
+    padding: 1rem;
+    font-size: larger;
+    border-radius: 10px;
+    background-color:antiquewhite;
+}
+
+.mainBtn:hover{
+    cursor: pointer;
+    background-color: aliceblue;
+}
+
+#GeneralInformationForm{
+    display: none;
+
+    margin-top: 1rem;
+}
+
+#ViewSection{
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color:antiquewhite;
+}
