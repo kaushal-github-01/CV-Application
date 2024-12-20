@@ -14,15 +14,34 @@
 
 .mainBtn{
     padding: 1rem;
+    width: 13rem;
     font-size: larger;
     border-radius: 10px;
     background-color:antiquewhite;
+}
+
+.mainBtn:not(:first-of-type) {
+    margin-top: 1rem;
 }
 
 .mainBtn:hover{
     cursor: pointer;
     background-color: aliceblue;
 }
+
+.sub-button{
+    margin-top: 1rem;
+    padding: 1rem;
+
+    width: 10rem;
+
+display: none;
+
+    border-radius: 10px;
+    background-color:antiquewhite;
+}
+
+.sub-button:hover{cursor: pointer;background-color: aliceblue;}
 
 #GeneralInformationForm{
     display: none;
@@ -45,10 +64,12 @@
     display: inline-block;
 }
 
-/* .cvLineBreak{
-    size: 100px;
-    color: black;
-} */
+.cvLineBreak{
+    width: 88%;
+    height: 1.5px;
+    background-color: black;
+    border: none;
+} 
 
 #CVContacts div{
     display: flex;

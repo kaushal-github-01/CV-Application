@@ -1,7 +1,9 @@
 import "./App.css";
 import "./styles/GeneralInformation.css";
+import "./styles/Skills.css";
 import { useState } from "react";
 import GeneralInformation from "./components/GeneralInformation";
+import SkillsInformation from "./components/SkillsInformation";
 
 function HandleBtnClick(item) {
   if (item.style.display === "block") {
@@ -42,6 +44,7 @@ function App() {
               handleInputChange,
             ]}
           />
+          <SkillsInformation />
         </section>
 
         <section id="ViewSection">
@@ -49,15 +52,7 @@ function App() {
             <h1 id="CVName">{GeneralInformationData.name}</h1>
             <p id="CVTitle">{GeneralInformationData.title}</p>
           </div>
-          <hr
-            className="cvLineBreak"
-            style={{
-              width: "88%",
-              height: "1.5px",
-              backgroundColor: "black",
-              border: "none",
-            }}
-          />
+          <hr className="cvLineBreak" />
           <div id="CVContacts">
             <h2>Contacts</h2>
             <div>
@@ -84,6 +79,10 @@ function App() {
               />
               <p>{GeneralInformationData.address}</p>
             </div>
+            <hr className="cvLineBreak" />
+          </div>
+          <div id="CVSkills">
+            <h2>Skills</h2>
           </div>
         </section>
       </div>
