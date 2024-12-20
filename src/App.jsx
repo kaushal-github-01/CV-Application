@@ -1,5 +1,5 @@
 import "./App.css";
-import "../src/styles/GeneralInformation.css";
+import "./styles/GeneralInformation.css";
 import { useState } from "react";
 import GeneralInformation from "./components/GeneralInformation";
 
@@ -28,7 +28,7 @@ function App() {
     title: "Finance Expert",
     number: 1234567890,
     email: "john@smith.com",
-    address: "unknown",
+    address: "ABC street, Old City",
   });
 
   return (
@@ -49,11 +49,41 @@ function App() {
             <h1 id="CVName">{GeneralInformationData.name}</h1>
             <p id="CVTitle">{GeneralInformationData.title}</p>
           </div>
+          <hr
+            className="cvLineBreak"
+            style={{
+              width: "88%",
+              height: "1.5px",
+              backgroundColor: "black",
+              border: "none",
+            }}
+          />
           <div id="CVContacts">
             <h2>Contacts</h2>
-            <p>{GeneralInformationData.number}</p>
-            <p>{GeneralInformationData.email}</p>
-            <p>{GeneralInformationData.address}</p>
+            <div>
+              <img
+                className="contactSectionIcons"
+                src="../src/assets/number.png"
+                alt="number img"
+              />
+              <p>{GeneralInformationData.number}</p>
+            </div>
+            <div>
+              <img
+                className="contactSectionIcons"
+                src="../src/assets/email.png"
+                alt="number img"
+              />
+              <p>{GeneralInformationData.email}</p>
+            </div>
+            <div>
+              <img
+                className="contactSectionIcons"
+                src="../src/assets/address.png"
+                alt="number img"
+              />
+              <p>{GeneralInformationData.address}</p>
+            </div>
           </div>
         </section>
       </div>

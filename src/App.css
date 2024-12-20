@@ -38,6 +38,24 @@
     display: grid;
     grid-template-areas: 
     'CVTop';
+}
 
-    background-color:antiquewhite;
+#ViewSection p{
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+/* .cvLineBreak{
+    size: 100px;
+    color: black;
+} */
+
+#CVContacts div{
+    display: flex;
+    align-items: center;
+}
+
+.contactSectionIcons{
+    display: inline-block;
+    height: 20px;
 }
