@@ -11,23 +11,20 @@
 }
 
 .mainBtn{
+    margin-bottom: 1rem;
     padding: 1rem;
-    width: 13rem;
+    width: 15rem;
     font-size: larger;
     border-radius: 10px;
     background-color:antiquewhite;
 }
 
-.mainBtn:not(:first-of-type) {margin-top: 1rem;}
-
 .mainBtn:hover{cursor: pointer; background-color: aliceblue;}
 
 .sub-button{
-    margin-top: 1rem;
     padding: 1rem;
 
     width: 10rem;
-
     display: none;
 
     border-radius: 10px;

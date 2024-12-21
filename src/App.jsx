@@ -4,6 +4,7 @@ import "./styles/Skills.css";
 import { useState } from "react";
 import GeneralInformation from "./components/GeneralInformation";
 import SkillsInformation from "./components/SkillsInformation";
+import EducationalExperience from "./components/EducationalExperience";
 
 function HandleBtnClick(item) {
   if (item.style.display === "block") {
@@ -14,7 +15,7 @@ function HandleBtnClick(item) {
 }
 
 function App() {
-  const [GeneralInformationData, setGeneralInformationData] = useState({
+  const [GeneralInfo, setGeneralInfo] = useState({
     name: "John Smith",
     title: "Finance Expert",
     number: 1234567890,
@@ -22,21 +23,21 @@ function App() {
     address: "ABC street, Old City",
   });
   const [skills, setSkills] = useState([]);
+  const [eduExp, setEduExp] = useState([]);
 
   return (
     <>
       <div id="component">
         <section id="EditSection">
-          <GeneralInformation
-            data={[GeneralInformationData, setGeneralInformationData]}
-          />
+          <GeneralInformation data={[GeneralInfo, setGeneralInfo]} />
           <SkillsInformation data={[skills, setSkills]} />
+          <EducationalExperience data={[eduExp, setEduExp]} />
         </section>
 
         <section id="ViewSection">
           <div id="CVTop">
-            <h1 id="CVName">{GeneralInformationData.name}</h1>
-            <p id="CVTitle">{GeneralInformationData.title}</p>
+            <h1 id="CVName">{GeneralInfo.name}</h1>
+            <p id="CVTitle">{GeneralInfo.title}</p>
           </div>
           <hr className="cvLineBreak" />
           <div id="CVContacts">
@@ -47,7 +48,7 @@ function App() {
                 src="../src/assets/number.png"
                 alt="number img"
               />
-              <p>{GeneralInformationData.number}</p>
+              <p>{GeneralInfo.number}</p>
             </div>
             <div>
               <img
@@ -55,7 +56,7 @@ function App() {
                 src="../src/assets/email.png"
                 alt="number img"
               />
-              <p>{GeneralInformationData.email}</p>
+              <p>{GeneralInfo.email}</p>
             </div>
             <div>
               <img
@@ -63,7 +64,7 @@ function App() {
                 src="../src/assets/address.png"
                 alt="number img"
               />
-              <p>{GeneralInformationData.address}</p>
+              <p>{GeneralInfo.address}</p>
             </div>
           </div>
           <hr className="cvLineBreak" />
