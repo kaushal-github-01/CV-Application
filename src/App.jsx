@@ -79,6 +79,7 @@ function App() {
               ))}
             </div>
           </div>
+          <hr className="cvLineBreak" />
         </section>
       </div>
     </>

@@ -20,10 +20,7 @@
 
 .mainBtn:not(:first-of-type) {margin-top: 1rem;}
 
-.mainBtn:hover{
-    cursor: pointer;
-    background-color: aliceblue;
-}
+.mainBtn:hover{cursor: pointer; background-color: aliceblue;}
 
 .sub-button{
     margin-top: 1rem;
@@ -37,9 +34,9 @@
     background-color:antiquewhite;
 }
 
-.sub-button:hover{cursor: pointer;background-color: aliceblue;}
+.sub-button:hover{cursor: pointer; background-color: aliceblue;}
 
-#GeneralInformationForm{display: none;margin-top: 1rem;}
+#GeneralInformationForm{display: none; margin-top: 1rem;}
 
 /* View Section */
 
@@ -51,10 +48,7 @@
     'CVTop';
 }
 
-#ViewSection p{
-    margin-left: 1rem;
-    display: inline-block;
-}
+#ViewSection p{margin-left: 1rem; display: inline-block;}
 
 .cvLineBreak{
     width: 88%;
@@ -65,7 +59,7 @@
 
 /* View Section -> CV TOP */
 
-#CVTop { grid-area: CVTop; }
+#CVTop {grid-area: CVTop;}
 
 #CVTop{
     display: flex;
@@ -73,35 +67,20 @@
     align-items: center;
 }
 
-#CVTop h1{
-    font-size: 35px;
-}
+#CVTop h1{font-size: 35px;}
 
-#CVTop p {
-    margin-top: 0.1rem;
-    font-size: 20px;
-}
+#CVTop p {margin-top: 0.1rem; font-size: 20px;}
 
 /* View Section -> Contact Section */
 
-#CVContacts{
-    margin-left: 3rem;
-}
+#CVContacts{margin-left: 3rem;}
 
-#CVContacts div{
-    display: flex;
-    align-items: center;
-}
+#CVContacts div{display: flex; align-items: center;}
 
-.contactSectionIcons{
-    display: inline-block;
-    height: 20px;
-}
+.contactSectionIcons{display: inline-block; height: 20px;}
 
 /* View Section -> Skills Section */
 
 #CVSkills{margin-left: 3rem;}
 
-#cv-skill-list > div:not(:first-of-type){
-    margin-top: 1rem;
-}
+#cv-skill-list > div{margin-bottom: 1rem;}
