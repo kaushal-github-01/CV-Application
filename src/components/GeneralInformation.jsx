@@ -1,9 +1,23 @@
 import { HandleBtnClick } from "../App";
 
+function handleInputChange(data) {
+  const event = data[0];
+  const GeneralInformationData = data[1];
+  const setGeneralInformationData = data[2];
+
+  setGeneralInformationData({
+    ...GeneralInformationData,
+    [event.target.name]: event.target.value,
+  });
+}
+
 function GeneralInformation({ data }) {
+  const GeneralInformationData = data[0];
+  const setGeneralInformationData = data[1];
+
   function handleChange(event) {
-    const newData = [event, data[0], data[1]];
-    data[2](newData);
+    const newData = [event, GeneralInformationData, setGeneralInformationData];
+    handleInputChange(newData);
   }
 
   return (

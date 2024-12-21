@@ -13,17 +13,6 @@ function HandleBtnClick(item) {
   }
 }
 
-function handleInputChange(data) {
-  const event = data[0];
-  const GeneralInformationData = data[1];
-  const setGeneralInformationData = data[2];
-
-  setGeneralInformationData({
-    ...GeneralInformationData,
-    [event.target.name]: event.target.value,
-  });
-}
-
 function App() {
   const [GeneralInformationData, setGeneralInformationData] = useState({
     name: "John Smith",
@@ -39,11 +28,7 @@ function App() {
       <div id="component">
         <section id="EditSection">
           <GeneralInformation
-            data={[
-              GeneralInformationData,
-              setGeneralInformationData,
-              handleInputChange,
-            ]}
+            data={[GeneralInformationData, setGeneralInformationData]}
           />
           <SkillsInformation data={[skills, setSkills]} />
         </section>
