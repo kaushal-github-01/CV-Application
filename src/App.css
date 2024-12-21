@@ -101,3 +101,7 @@
 /* View Section -> Skills Section */
 
 #CVSkills{margin-left: 3rem;}
+
+#cv-skill-list > div:not(:first-of-type){
+    margin-top: 1rem;
+}

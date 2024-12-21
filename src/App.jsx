@@ -69,6 +69,15 @@ function App() {
           <hr className="cvLineBreak" />
           <div id="CVSkills">
             <h2>Skills</h2>
+            <div id="cv-skill-list">
+              {skills.map((skill, index) => (
+                <div key={index}>
+                  {" "}
+                  {/* Important: Add a unique key */}
+                  {skill}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </div>
