@@ -32,6 +32,7 @@ function App() {
     email: "john@smith.com",
     address: "ABC street, Old City",
   });
+  const [skills, setSkills] = useState([]);
 
   return (
     <>
@@ -44,7 +45,7 @@ function App() {
               handleInputChange,
             ]}
           />
-          <SkillsInformation />
+          <SkillsInformation data={[skills, setSkills]} />
         </section>
 
         <section id="ViewSection">
@@ -79,8 +80,8 @@ function App() {
               />
               <p>{GeneralInformationData.address}</p>
             </div>
-            <hr className="cvLineBreak" />
           </div>
+          <hr className="cvLineBreak" />
           <div id="CVSkills">
             <h2>Skills</h2>
           </div>
