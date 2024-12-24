@@ -1,0 +1,26 @@
+#profile-textarea{
+    height: 10rem;
+    width: 20rem;
+
+    padding: 1rem;
+
+    border: 3px solid #ccc;
+    border-radius: 5px;
+
+    font-family: sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333; /* Dark gray text */
+
+    background-color: #f8f8f8; /* Light gray background */
+
+    resize: vertical;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+textarea:focus {
+    outline: none; /* remove default outline */
+    border-color: #007bff; /* change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25); /* add a subtle box shadow */
+}
