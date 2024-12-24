@@ -72,15 +72,23 @@ function App() {
             <h2>Skills</h2>
             <div id="cv-skill-list">
               {skills.map((skill, index) => (
-                <div key={index}>
-                  {" "}
-                  {/* Important: Add a unique key */}
-                  {skill}
-                </div>
+                <div key={index}> {skill}</div>
               ))}
             </div>
           </div>
           <hr className="cvLineBreak" />
+          <div id="cv-education">
+            <h2>Education</h2>
+            <div id="cv-education-list">
+              {eduExp.map((exp, index) => (
+                <div key={index}>
+                  {exp.institute} <br />
+                  {exp.stream} <br />
+                  {exp.duration}
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
       </div>
     </>
