@@ -87,24 +87,24 @@ function App() {
                 <div>
                   <img
                     className="contactSectionIcons"
-                    src="../src/assets/number.png"
-                    alt="number img"
+                    src="https://img.icons8.com/?size=100&id=9659&format=png&color=000000"
+                    alt="num img"
                   />
                   <p>{GeneralInfo.number}</p>
                 </div>
                 <div>
                   <img
                     className="contactSectionIcons"
-                    src="../src/assets/email.png"
-                    alt="number img"
+                    src="https://img.icons8.com/?size=100&id=12580&format=png&color=000000"
+                    alt="email img"
                   />
                   <p>{GeneralInfo.email}</p>
                 </div>
                 <div>
                   <img
                     className="contactSectionIcons"
-                    src="../src/assets/address.png"
-                    alt="number img"
+                    src="https://img.icons8.com/?size=100&id=53383&format=png&color=000000"
+                    alt="address img"
                   />
                   <p>{GeneralInfo.address}</p>
                 </div>
