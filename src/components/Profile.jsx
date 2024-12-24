@@ -22,11 +22,7 @@ function Profile({ data }) {
 
       {isVisible && (
         <div>
-          <textarea
-            id="profile-textarea"
-            value={profile}
-            onChange={handleTextAreaChange}
-          ></textarea>
+          <textarea value={profile} onChange={handleTextAreaChange}></textarea>
         </div>
       )}
     </>

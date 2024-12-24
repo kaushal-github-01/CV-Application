@@ -1,19 +1,21 @@
-import "../styles/EducationalExperience.css";
-import React, { useState } from "react"; // Import useState hook
+import React, { useState } from "react";
 
-function EducationalExperience({ data }) {
-  const [eduExp, setEduExp] = data;
-  const [isVisible, setIsVisible] = useState(false); // New state for visibility
+function WorkExperience({ data }) {
+  const [workExp, setWorkExp] = data;
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleAddExp = () => {
-    setEduExp([...eduExp, { institute: "", stream: "", duration: "" }]);
+    setWorkExp([
+      ...workExp,
+      { position: "", company: "", duration: "", responsibilities: "" },
+    ]);
   };
 
   const handleInputChange = (index, event) => {
-    const newEduExp = [...eduExp];
+    const newWorkExp = [...workExp];
     const { name, value } = event.target;
-    newEduExp[index][name] = value;
-    setEduExp(newEduExp);
+    newWorkExp[index][name] = value;
+    setWorkExp(newWorkExp);
   };
 
   return (
@@ -24,34 +26,32 @@ function EducationalExperience({ data }) {
           setIsVisible(!isVisible);
         }}
       >
-        Educational Experience
+        Work Experience
       </button>
 
       {isVisible && (
         <>
-          <button id="edu-exp-sub-button" onClick={handleAddExp}>
-            Add Education
-          </button>
-          <div id="edu-exp-folder">
-            {eduExp.map((exp, index) => (
+          <button onClick={handleAddExp}>Add Experience</button>
+          <div id="work-exp-folder">
+            {workExp.map((exp, index) => (
               <div key={index}>
                 <label>
-                  Institute:{" "}
+                  Position:{" "}
                   <input
                     type="text"
-                    name="institute"
-                    value={exp.institute || ""} //Handle cases where exp might be undefined
+                    name="position"
+                    value={exp.position || ""}
                     onChange={(event) => handleInputChange(index, event)}
                   />
-                </label>
+                </label>{" "}
                 <br />
                 <br />{" "}
                 <label>
-                  Stream:{" "}
+                  Company:{" "}
                   <input
                     type="text"
-                    name="stream"
-                    value={exp.stream || ""} // Handle cases where exp might be undefined
+                    name="company"
+                    value={exp.company || ""} // Handle cases where exp might be undefined
                     onChange={(event) => handleInputChange(index, event)}
                   />
                 </label>
@@ -65,12 +65,23 @@ function EducationalExperience({ data }) {
                     value={exp.duration || ""} // Handle cases where exp might be undefined
                     onChange={(event) => handleInputChange(index, event)}
                   />
-                </label>{" "}
+                </label>
+                <br />
+                <br />
+                <label>
+                  Responsibilities: <br />
+                  <textarea
+                    name="responsibilities"
+                    value={exp.responsibilities || ""}
+                    onChange={(event) => handleInputChange(index, event)}
+                  />
+                </label>
+                <br /> <br />
                 <button
                   onClick={() => {
-                    const newEduExp = [...eduExp];
-                    newEduExp.splice(index, 1);
-                    setEduExp(newEduExp);
+                    const newWorkExp = [...workExp];
+                    newWorkExp.splice(index, 1);
+                    setWorkExp(newWorkExp);
                   }}
                 >
                   Remove
@@ -83,16 +94,8 @@ function EducationalExperience({ data }) {
           </div>
         </>
       )}
-
-      {/* <button
-        id="edu-exp-sub-button"
-        className="sub-button"
-        onClick={handleAddExp}
-      >
-        Add Education
-      </button> */}
     </>
   );
 }
 
-export default EducationalExperience;
+export default WorkExperience;

@@ -75,3 +75,12 @@
 /* View Section -> Skills Section */
 
 #cv-skill-list > div{margin-bottom: 1rem;}
+
+/* View Section -> Work Experience Section */
+
+#work-company-duration{
+    margin-top: -1rem;
+
+    display: flex; 
+    justify-content: space-between;
+}

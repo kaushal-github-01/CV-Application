@@ -6,6 +6,7 @@ import GeneralInformation from "./components/GeneralInformation";
 import SkillsInformation from "./components/SkillsInformation";
 import EducationalExperience from "./components/EducationalExperience";
 import Profile from "./components/Profile";
+import WorkExperience from "./components/WorkExperience";
 
 function HandleBtnClick(item) {
   if (item.style.display === "block") {
@@ -26,6 +27,7 @@ function App() {
   const [skills, setSkills] = useState([]);
   const [eduExp, setEduExp] = useState([]);
   const [profile, setProfile] = useState("This is 'About Me'");
+  const [workExp, setWorkExp] = useState([]);
 
   return (
     <>
@@ -35,6 +37,7 @@ function App() {
           <SkillsInformation data={[skills, setSkills]} />
           <EducationalExperience data={[eduExp, setEduExp]} />
           <Profile data={[profile, setProfile]} />
+          <WorkExperience data={[workExp, setWorkExp]} />
         </section>
 
         <section id="ViewSection">
@@ -100,6 +103,27 @@ function App() {
                 <h2>Profile</h2>
                 <p>{profile}</p>
                 <hr className="cvLineBreak" />
+              </div>
+              <div id="cv-work">
+                <h2>Work Experience</h2>
+                <div id="cv-work-list">
+                  {workExp.map((exp, index) => (
+                    <div key={index}>
+                      <h4> {exp.position}</h4>
+                      <div id="work-company-duration">
+                        <p>{exp.company}</p>
+                        <p>{exp.duration}</p>
+                      </div>
+                      <p>
+                        {exp.responsibilities
+                          .split("\n")
+                          .map((responsibility, subIndex) => (
+                            <p key={subIndex}>• {responsibility}</p>
+                          ))}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
