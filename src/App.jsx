@@ -1,20 +1,15 @@
+import React, { useRef, useState } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+
 import "./App.css";
 import "./styles/GeneralInformation.css";
-import "./styles/Skills.css";
-import { useState } from "react";
+import "./styles/SkillsInformation.css";
 import GeneralInformation from "./components/GeneralInformation";
 import SkillsInformation from "./components/SkillsInformation";
 import EducationalExperience from "./components/EducationalExperience";
 import Profile from "./components/Profile";
 import WorkExperience from "./components/WorkExperience";
-
-function HandleBtnClick(item) {
-  if (item.style.display === "block") {
-    item.style.display = "none";
-  } else {
-    item.style.display = "block";
-  }
-}
 
 function App() {
   const [GeneralInfo, setGeneralInfo] = useState({
@@ -29,6 +24,42 @@ function App() {
   const [profile, setProfile] = useState("This is 'About Me'");
   const [workExp, setWorkExp] = useState([]);
 
+  // Ref for the ViewSection element
+  const viewSectionRef = useRef(null);
+
+  const handlePrint = async () => {
+    const input = viewSectionRef.current;
+    const canvas = await html2canvas(input, {
+      scale: window.devicePixelRatio, // Use device pixel ratio
+    });
+
+    const pdf = new jsPDF("p", "mm", "a4");
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+
+    const canvasWidth = canvas.width;
+    const canvasHeight = canvas.height;
+
+    // Calculate scaling factor to fit content within A4 page
+    const widthRatio = pdfWidth / canvasWidth;
+    const heightRatio = pdfHeight / canvasHeight;
+    const scaleFactor = Math.min(widthRatio, heightRatio); // Use the smaller ratio to fit within both width and height
+
+    const imgWidth = canvasWidth * scaleFactor;
+    const imgHeight = canvasHeight * scaleFactor;
+
+    pdf.addImage(
+      canvas.toDataURL("image/jpeg", 0.9),
+      "JPEG",
+      (pdfWidth - imgWidth) / 2,
+      0,
+      imgWidth,
+      imgHeight
+    ); // Center horizontally
+
+    pdf.save("your_cv.pdf");
+  };
+
   return (
     <>
       <div id="component">
@@ -38,9 +69,12 @@ function App() {
           <EducationalExperience data={[eduExp, setEduExp]} />
           <Profile data={[profile, setProfile]} />
           <WorkExperience data={[workExp, setWorkExp]} />
+          <button className="mainBtn" onClick={handlePrint}>
+            Print CV
+          </button>
         </section>
 
-        <section id="ViewSection">
+        <section id="ViewSection" ref={viewSectionRef}>
           <div id="CVTop">
             <h1 id="CVName">{GeneralInfo.name}</h1>
             <p id="CVTitle">{GeneralInfo.title}</p>
@@ -92,7 +126,7 @@ function App() {
                     <div key={index}>
                       <h4> {exp.institute}</h4>
                       <p> {exp.stream}</p>
-                      <p>{exp.duration}</p>
+                      <p>{exp.duration}</p> <br />
                     </div>
                   ))}
                 </div>
@@ -109,24 +143,26 @@ function App() {
                 <div id="cv-work-list">
                   {workExp.map((exp, index) => (
                     <div key={index}>
-                      <h4> {exp.position}</h4>
+                      <h3> {exp.position}</h3>
                       <div id="work-company-duration">
                         <p>{exp.company}</p>
                         <p>{exp.duration}</p>
                       </div>
                       <p>
                         {exp.responsibilities
-                          .split("\n")
+                          .split("\n\n")
                           .map((responsibility, subIndex) => (
                             <p key={subIndex}>• {responsibility}</p>
                           ))}
                       </p>
+                      <br />
                     </div>
                   ))}
                 </div>
               </div>
             </div>
           </div>
+          <hr className="cvLineBreak" />
         </section>
       </div>
     </>
@@ -134,4 +170,3 @@ function App() {
 }
 
 export default App;
-export { HandleBtnClick };

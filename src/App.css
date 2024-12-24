@@ -1,7 +1,7 @@
 #component {display: flex;}
 
 #EditSection{
-    width: 40%;
+    width: 30%;
 
     display: flex;
     flex-direction: column;
@@ -22,10 +22,10 @@
 .mainBtn:hover{cursor: pointer; background-color: aliceblue;}
 
 .sub-button{
+    margin-bottom: 1rem;
     padding: 1rem;
 
     width: 10rem;
-    display: none;
 
     border-radius: 10px;
     background-color:antiquewhite;
@@ -33,11 +33,9 @@
 
 .sub-button:hover{cursor: pointer; background-color: aliceblue;}
 
-#GeneralInformationForm{display: none; margin-top: 1rem;}
-
 /* View Section */
 
-#ViewSection{width: 60%; padding: 0rem 3rem;}
+#ViewSection{width: 70%; padding: 0rem 3rem;}
 
 .cvLineBreak{
     width: 100%;

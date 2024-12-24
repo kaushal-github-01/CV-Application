@@ -31,7 +31,9 @@ function WorkExperience({ data }) {
 
       {isVisible && (
         <>
-          <button onClick={handleAddExp}>Add Experience</button>
+          <button className="sub-button" onClick={handleAddExp}>
+            Add Experience
+          </button>
           <div id="work-exp-folder">
             {workExp.map((exp, index) => (
               <div key={index}>
@@ -76,7 +78,7 @@ function WorkExperience({ data }) {
                     onChange={(event) => handleInputChange(index, event)}
                   />
                 </label>
-                <br /> <br />
+                <br />
                 <button
                   onClick={() => {
                     const newWorkExp = [...workExp];

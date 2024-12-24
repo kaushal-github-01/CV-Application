@@ -1,9 +1,9 @@
 import "../styles/EducationalExperience.css";
-import React, { useState } from "react"; // Import useState hook
+import React, { useState } from "react";
 
 function EducationalExperience({ data }) {
   const [eduExp, setEduExp] = data;
-  const [isVisible, setIsVisible] = useState(false); // New state for visibility
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleAddExp = () => {
     setEduExp([...eduExp, { institute: "", stream: "", duration: "" }]);
@@ -29,7 +29,11 @@ function EducationalExperience({ data }) {
 
       {isVisible && (
         <>
-          <button id="edu-exp-sub-button" onClick={handleAddExp}>
+          <button
+            id="edu-exp-sub-button"
+            className="sub-button"
+            onClick={handleAddExp}
+          >
             Add Education
           </button>
           <div id="edu-exp-folder">
