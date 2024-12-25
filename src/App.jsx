@@ -11,6 +11,10 @@ import EducationalExperience from "./components/EducationalExperience";
 import Profile from "./components/Profile";
 import WorkExperience from "./components/WorkExperience";
 
+import NumberIcon from "./assets/number.png";
+import EmailIcon from "./assets/email.png";
+import AddressIcon from "./assets/address.png";
+
 function App() {
   const [GeneralInfo, setGeneralInfo] = useState({
     name: "John Smith",
@@ -87,7 +91,7 @@ function App() {
                 <div>
                   <img
                     className="contactSectionIcons"
-                    src="https://img.icons8.com/?size=100&id=9659&format=png&color=000000"
+                    src={NumberIcon}
                     alt="num img"
                   />
                   <p>{GeneralInfo.number}</p>
@@ -95,7 +99,7 @@ function App() {
                 <div>
                   <img
                     className="contactSectionIcons"
-                    src="https://img.icons8.com/?size=100&id=12580&format=png&color=000000"
+                    src={EmailIcon}
                     alt="email img"
                   />
                   <p>{GeneralInfo.email}</p>
@@ -103,7 +107,7 @@ function App() {
                 <div>
                   <img
                     className="contactSectionIcons"
-                    src="https://img.icons8.com/?size=100&id=53383&format=png&color=000000"
+                    src={AddressIcon}
                     alt="address img"
                   />
                   <p>{GeneralInfo.address}</p>
